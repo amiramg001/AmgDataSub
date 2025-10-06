@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="text-center mb-4">
+  <h2 class="fw-bold text-primary">Welcome to Your Dashboard 💜</h2>
+  <p>Your smart way to buy data and airtime instantly!</p>
+</div>
+
+<div class="row g-4 justify-content-center">
+  <div class="col-md-4">
+    <div class="card shadow-sm">
+      <div class="card-body text-center">
+        <h5>Wallet Balance</h5>
+        <h3 class="fw-bold text-success">₦{{ wallet.balance }}</h3>
+        <a href="{{ url_for('fund_wallet') }}" class="btn btn-primary mt-2 w-100">Fund Wallet</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card shadow-sm">
+      <div class="card-body text-center">
+        <h5>Virtual Account</h5>
+        <p><strong>Bank:</strong> {{ bank_name }}</p>
+        <p><strong>Account No:</strong> {{ account_number }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mt-4 text-center">
+  <a href="{{ url_for('airtime') }}" class="btn btn-outline-primary mx-2">Buy Airtime</a>
+  <a href="{{ url_for('data') }}" class="btn btn-outline-success mx-2">Buy Data</a>
+</div>
+{% endblock %}

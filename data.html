@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}Buy Data{% endblock %}
+
+{% block content %}
+<div class="card mx-auto shadow-sm" style="max-width: 550px;">
+  <div class="card-body">
+    <h4 class="text-center text-gradient fw-bold mb-4">Buy Data Plan 💜</h4>
+
+    <form method="POST">
+      <!-- Network Selection -->
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Select Network</label>
+        <select name="network" class="form-select" required>
+          <option value="" selected disabled>-- Choose Network --</option>
+          <option value="MTN">MTN</option>
+          <option value="AIRTEL">Airtel</option>
+          <option value="GLO">Glo</option>
+          <option value="9MOBILE">9mobile</option>
+        </select>
+      </div>
+
+      <!-- Phone Number -->
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Phone Number</label>
+        <input type="tel" name="phone" class="form-control" placeholder="Enter recipient number" pattern="[0-9]{11}" required>
+      </div>
+
+      <!-- Data Plan -->
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Choose Data Plan</label>
+        <select name="plan" class="form-select" required>
+          <option value="" selected disabled>-- Select Plan --</option>
+          <optgroup label="MTN">
+            <option value="500MB">₦200 - 500MB (1 day)</option>
+            <option value="1GB">₦300 - 1GB (1 day)</option>
+            <option value="2GB">₦500 - 2GB (2 days)</option>
+            <option value="5GB">₦1200 - 5GB (7 days)</option>
+          </optgroup>
+          <optgroup label="AIRTEL">
+            <option value="500MB">₦250 - 500MB (1 day)</option>
+            <option value="1GB">₦350 - 1GB (1 day)</option>
+            <option value="2GB">₦600 - 2GB (2 days)</option>
+          </optgroup>
+          <optgroup label="GLO">
+            <option value="500MB">₦200 - 500MB (1 day)</option>
+            <option value="1GB">₦300 - 1GB (1 day)</option>
+            <option value="3GB">₦700 - 3GB (3 days)</option>
+          </optgroup>
+          <optgroup label="9MOBILE">
+            <option value="500MB">₦250 - 500MB (1 day)</option>
+            <option value="1.5GB">₦500 - 1.5GB (3 days)</option>
+            <option value="3GB">₦900 - 3GB (7 days)</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <!-- Transaction PIN -->
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Transaction PIN</label>
+        <input type="password" name="pin" maxlength="4" pattern="[0-9]{4}" class="form-control" placeholder="Enter 4-digit PIN" required>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-success w-100 fw-bold">Purchase Data</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

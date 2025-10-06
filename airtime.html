@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Buy Airtime{% endblock %}
+
+{% block content %}
+<div class="card mx-auto shadow-sm" style="max-width: 500px;">
+  <div class="card-body">
+    <h4 class="text-center text-primary fw-bold mb-3">Buy Airtime</h4>
+    <form method="POST">
+      <div class="mb-3">
+        <label>Amount (₦)</label>
+        <input type="number" name="amount" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Purchase Airtime</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="text-center">
+  <h1 class="fw-bold text-gradient mb-3">Welcome to AmgDataSub 💜</h1>
+  <p class="lead text-muted">Buy Airtime, Data, and Fund Your Wallet Instantly.</p>
+  {% if 'user' not in session %}
+  <a href="{{ url_for('register') }}" class="btn btn-primary mt-3 px-4">Get Started</a>
+  {% else %}
+  <a href="{{ url_for('dashboard') }}" class="btn btn-success mt-3 px-4">Go to Dashboard</a>
+  {% endif %}
+</div>
+{% endblock %}
